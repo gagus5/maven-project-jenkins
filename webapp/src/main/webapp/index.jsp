@@ -1,52 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Random" %>
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenida - Despliegue de Aplicación</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Página de Bienvenida con Número Aleatorio</title>
     <style>
         body {
-            background-color: #f8f9fa;
-        }
-        .welcome-section {
-            padding: 100px 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             text-align: center;
+            padding: 50px;
         }
-        .welcome-section h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        h1 {
+            color: #333;
         }
-        .welcome-section p {
-            font-size: 1.25rem;
-            color: #6c757d;
-        }
-        .welcome-section .btn {
+        .random-number {
+            font-size: 2em;
+            color: #d9534f;
             margin-top: 20px;
         }
     </style>
 </head>
 <body>
+    <h1>Bienvenido a mi pagina hecha por Joaquin Garcia</h1>
+    <p>Gracias por visitarnos. Aqui tienes un numero aleatorio como regalo:</p>
 
-    <!-- Sección de Bienvenida -->
-    <section class="welcome-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="display-4">¡Bienvenido a mi aplicación!</h1>
-                    <p class="lead">
-                        Esta aplicación ha sido desplegada exitosamente utilizando un pipeline de CI/CD.
-                        Hecho por Joaquin Garcia Gutierrez mientras pruebo una IA China. ¡Esperamos que disfrutes de la experiencia!
-                    </p>
-                    <a href="#" class="btn btn-primary btn-lg">Comenzar</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <%-- Generar un numero aleatorio --%>
+    <%
+        Random random = new Random();
+        int numeroAleatorio = random.nextInt(100); // Número entre 0 y 99
+    %>
 
-    <!-- Bootstrap JS y dependencias -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <div class="random-number">
+        Numero aleatorio: <%= numeroAleatorio %>
+    </div>
 </body>
 </html>
